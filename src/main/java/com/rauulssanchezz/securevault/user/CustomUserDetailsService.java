@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.user;
+package com.rauulssanchezz.securevault.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.admindashboard;
+package com.rauulssanchezz.securevault.admindashboard;
 
 public interface AdminDashboardItemInterface {
     String getDisplayName();

@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.user;
+package com.rauulssanchezz.securevault.user;
 
 import java.util.Collection;
 import java.util.Set;

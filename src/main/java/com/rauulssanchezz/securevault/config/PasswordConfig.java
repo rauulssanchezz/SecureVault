@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.config;
+package com.rauulssanchezz.securevault.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

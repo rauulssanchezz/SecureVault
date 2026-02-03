@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.config;
+package com.rauulssanchezz.securevault.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.rauulssanchezz.authadminstarter.user.CustomUserDetailsService;
+import com.rauulssanchezz.securevault.user.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity

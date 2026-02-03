@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.errors;
+package com.rauulssanchezz.securevault.errors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.admindashboard;
+package com.rauulssanchezz.securevault.admindashboard;
 
 public record AdminDashboardItemDto(String name, long count, String icon, String link) implements AdminDashboardItemInterface {
     @Override public String getDisplayName() { return name; }

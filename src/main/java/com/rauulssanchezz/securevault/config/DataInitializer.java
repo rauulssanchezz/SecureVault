@@ -1,4 +1,4 @@
-package com.rauulssanchezz.authadminstarter.config;
+package com.rauulssanchezz.securevault.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -6,8 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.rauulssanchezz.authadminstarter.user.User;
-import com.rauulssanchezz.authadminstarter.user.UserRepository;
+import com.rauulssanchezz.securevault.user.User;
+import com.rauulssanchezz.securevault.user.UserRepository;
 
 @Component
 public class DataInitializer implements CommandLineRunner {

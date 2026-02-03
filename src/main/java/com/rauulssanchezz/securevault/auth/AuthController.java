@@ -1,10 +1,10 @@
-package com.rauulssanchezz.authadminstarter.auth;
+package com.rauulssanchezz.securevault.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.rauulssanchezz.authadminstarter.user.User;
-import com.rauulssanchezz.authadminstarter.user.UserService;
+import com.rauulssanchezz.securevault.user.User;
+import com.rauulssanchezz.securevault.user.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

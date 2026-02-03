@@ -1,11 +1,11 @@
-package com.rauulssanchezz.authadminstarter.admindashboard;
+package com.rauulssanchezz.securevault.admindashboard;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.rauulssanchezz.authadminstarter.user.UserService;
+import com.rauulssanchezz.securevault.user.UserService;
 
 @Service
 public class AdminDashboardService {

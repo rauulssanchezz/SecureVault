@@ -37,6 +37,9 @@ public class User implements UserDetails{
 
     private String role;
 
+    @Column(nullable = false)
+    private Boolean isActive = false;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Set.of(new SimpleGrantedAuthority(role));
@@ -46,5 +49,5 @@ public class User implements UserDetails{
     @Override public boolean isAccountNonExpired() { return true; }
     @Override public boolean isAccountNonLocked() { return true; }
     @Override public boolean isCredentialsNonExpired() { return true; }
-    @Override public boolean isEnabled() { return true; }
+    @Override public boolean isEnabled() { return this.isActive; }
 }

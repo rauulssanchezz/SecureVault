@@ -36,9 +36,10 @@ public class DataInitializer implements CommandLineRunner {
             // Seteamos la contraseña encriptada
             admin.setPassword(passwordEncoder.encode(adminPassword));
             admin.setRole("ROLE_ADMIN");
+            admin.setIsActive(true);
             
             userRepository.save(admin);
-            System.out.println(">>> Superuser creado: admin@admin.com / admin1234");
+            System.out.println(">>> Superuser creado: " + adminEmail + " / " + adminPassword);
         }
     }
 }

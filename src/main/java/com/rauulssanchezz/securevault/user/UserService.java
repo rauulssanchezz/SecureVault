@@ -2,19 +2,28 @@ package com.rauulssanchezz.securevault.user;
 
 import java.util.List;
 import java.util.Optional;
-
+import com.rauulssanchezz.securevault.verificationcode.VerificationCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.mailjet.client.errors.MailjetException;
+import com.rauulssanchezz.securevault.utils.mailjet.MailJetUtils;
+import com.rauulssanchezz.securevault.utils.mailjet.OptionsToSendInterface;
+
 @Service
 public class UserService {
+
+    private VerificationCodeService verificationCodeService;
     
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private MailJetUtils mailJetUtils;
 
     public void registerUser(User user) {
         if (userRepository.existsByEmail(user.getEmail())) {
@@ -28,6 +37,14 @@ public class UserService {
         }
 
         userRepository.save(user);
+
+        try {
+            mailJetUtils.sendMailJetEmail(user, OptionsToSendInterface.verificationCode);
+        } catch (MailjetException e) {
+            System.err.println("DETALLE DEL ERROR DE MAILJET: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Error sending verification email: " + e.getMessage());
+        }
     }
 
     public List<User> findAll() {
@@ -36,6 +53,18 @@ public class UserService {
 
     public long getCount() {
         return userRepository.count();
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public Boolean verifyPassword(Long userId, String newPassword, String confirmPassword) {
+        if (!newPassword.equals(confirmPassword)) {
+            throw new RuntimeException("Passwords dont match");
+        }
+
+        return verificationCodeService.verifyPasswordCode(userId, newPassword);
     }
 
     public void delete(long id) {

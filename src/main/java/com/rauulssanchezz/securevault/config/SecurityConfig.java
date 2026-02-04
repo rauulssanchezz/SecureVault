@@ -39,11 +39,12 @@ public class SecurityConfig {
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             )
-            .formLogin(form -> form
+           .formLogin(form -> form
                 .loginPage("/auth/login")
                 .loginProcessingUrl("/auth/login")
-                .usernameParameter("email") // USAMOS EMAIL
+                .usernameParameter("email")
                 .defaultSuccessUrl("/admin/dashboard", true)
+                .failureUrl("/auth/login?error") // Aquí llegará si isActive es false
                 .permitAll()
             )
             .logout(logout -> logout
